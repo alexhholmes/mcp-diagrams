@@ -1,17 +1,21 @@
-[tool.poetry]
-name = "mcp-diagrams"
+[project]
+name = "mcp-server-diagrams"
 version = "0.1.0"
 description = "A model context protocol server for mingrammer/diagrams"
-authors = ["Alex Holmes <alex@sed.dev>"]
+authors = [{ name = "Alex Holmes", email = "alex@sed.dev" }]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-anyio = "^4.7"
-mcp = "^1.1"
-
+license = "MIT"
+keywords = ["mcp", "mingrammer", "diagrams"]
+requires-python = ">=3.10"
+dependencies = [
+    "anyio>=4.7",
+    "mcp>=1.1",
+    "diagrams>=0.20",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
+[project.scripts]
+mcp-server-diagrams = "mcp_server_diagrams:main"
